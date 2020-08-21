@@ -57,14 +57,8 @@ MonoBehaviour:
   m_fixedUILayer: {fileID: 3720843517881916337}
   m_uiViewInfos:
   - m_uiView:
-      m_AssetGUID: b5c7b862d57f346fd97ea209ffbbd732
+      m_AssetGUID: abd141cd9271d477a984d1fd4049a55c
     m_layer: 0
-  - m_uiView:
-      m_AssetGUID: 16e1627b9ff0041f8a4d373cc69e67b0
-    m_layer: 1
-  - m_uiView:
-      m_AssetGUID: 706b8e645ce214a9b92c187436c3035d
-    m_layer: 1
 --- !u!1 &2732267505307251029
 GameObject:
   m_ObjectHideFlags: 0

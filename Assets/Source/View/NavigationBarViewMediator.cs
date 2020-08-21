@@ -30,6 +30,7 @@ public class NavigationBarViewMediator : Mediator, IMediator
 
         switch (name)
         {
+
         }
     }
 
