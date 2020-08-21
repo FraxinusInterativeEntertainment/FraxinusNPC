@@ -1,25 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
-using System;
+using UnityEngine;
 
 public class LoginView : UIViewBase
 {
     public event Action TryLogin = delegate { };
-    public event Action TryLogout = delegate { };
 
     public LoginVO loginVO { get; private set; }
 
     [SerializeField]
-    private GameObject m_userInfoPanel;
-    [SerializeField]
-    private Button m_logoutButton;
-    [SerializeField]
-    private Text m_userNameText;
-
-    [SerializeField]
     private GameObject m_loginPanel;
+    [SerializeField]
+    private Button m_mofiIdInputBtn;
     [SerializeField]
     private Button m_loginButton;
     [SerializeField]
@@ -28,59 +22,69 @@ public class LoginView : UIViewBase
     private InputField m_passwordField;
     [SerializeField]
     private Text m_loginResultText;
+    [SerializeField]
+    private GameObject m_mofiIdInputPanel;
+    [SerializeField]
+    private InputField m_mofiIdInputField;
+    [SerializeField]
+    private Button m_mofiIdBackBtn;
+    [SerializeField]
+    private Button m_mofiIdEnterButton;
+    private string m_mofiId;
 
-    private string m_lastLoginUsername;
-
-    void Start()
+    private void Start()
     {
         AppFacade.instance.RegisterMediator(new LoginViewMediator(this));
-
-        m_loginButton.onClick.AddListener(() => { 
+        m_loginButton.onClick.AddListener(() => {
             TryLogin();
-            m_lastLoginUsername = loginVO.userName;
         });
+        m_mofiIdInputBtn.onClick.AddListener(() => ActivateMofiIdPanel());
+        m_mofiIdBackBtn.onClick.AddListener(() => ActivateLoginPanel());
+        m_mofiIdEnterButton.onClick.AddListener(() => SaveMofiId());
+        m_mofiIdInputField.onValueChanged.AddListener(SetMofiId);
         m_userNameField.onValueChanged.AddListener((string _userName) => { loginVO.userName = _userName; });
         m_passwordField.onValueChanged.AddListener((string _password) => { loginVO.password = _password; });
-
-        m_logoutButton.onClick.AddListener(() => { TryLogout(); });
-
         loginVO = new LoginVO();
     }
-    
     void OnDestroy()
     {
         AppFacade.instance.RemoveMediator(LoginViewMediator.NAME);
     }
-
+    private void ActivateMofiIdPanel()
+    {
+        if (m_mofiIdInputPanel.activeSelf == false)
+        {
+            m_loginPanel.SetActive(false);
+            m_mofiIdInputPanel.SetActive(true);
+            m_mofiIdInputField.text = PlayerPrefs.GetString("MofiID");
+        }
+    }
     public void ActivateLoginPanel()
     {
-        m_userInfoPanel.SetActive(false);
         m_loginPanel.SetActive(true);
-        ClearUI();
+        m_mofiIdInputPanel.SetActive(false);
     }
-
-    public void ActivateUserInfoPanel()
+    private void SetMofiId(string _mofiId)
     {
-        m_userInfoPanel.SetActive(true);
-        m_loginPanel.SetActive(false);
-        ClearUI();
+        m_mofiId = _mofiId;
+        loginVO.mofiID = m_mofiId;
     }
-
+    private void SaveMofiId()
+    {
+        if (m_mofiId !=null)
+        {
+            PlayerPrefs.SetString("MofiID", m_mofiId);
+            Debug.Log("MofiID=" + loginVO.mofiID);
+        }
+    }
     public void SetLoginResultText(string _result)
     {
         m_loginResultText.text = _result;
     }
-
-    public void UpdateUserNameText()
-    {
-        m_userNameText.text = m_lastLoginUsername;
-    }
-
     private void ClearUI()
     {
         m_userNameField.text = "";
         m_passwordField.text = "";
         m_loginResultText.text = "";
-        m_userNameText.text = "";
     }
 }
