@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: LoginView
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d2478283882bad945a887b7e81fa8840
+    m_Address: CheckPointView
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 024944a3c8a5c4c6db4bc2bc3e44ddbb, type: 2}
   m_SchemaSet:

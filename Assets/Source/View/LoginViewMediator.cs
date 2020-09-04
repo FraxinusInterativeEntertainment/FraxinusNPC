@@ -41,12 +41,10 @@ public class LoginViewMediator : Mediator, IMediator
     {
         SendNotification(Const.Notification.SEND_ADMIN_LOGIN, m_loginView.loginVO);
     }
-
     private void OnLoginSuccess()
     {
         m_loginView.SetLoginResultText("Login Success!");
     }
-
     private void OnLoginFailed(string _errMsg)
     {
         m_loginView.SetLoginResultText(_errMsg);

@@ -12,8 +12,9 @@ public static partial class Const
         #endregion
 
 
-        #region Login cc 
+        #region Login CheckPoint 
         public const string SEND_ADMIN_LOGIN = "SendAdminLogin";
+        public const string SEND_ACTOR_CHECK_POINT_RECORD = "SendActorCheckPointRecord";
         #endregion
 
         #region Local system
@@ -34,6 +35,8 @@ public static partial class Const
         public const string SHOW_ACTOR_INFO = "ShowActorInfo";
         public const string GAME_CLOSED = "GAME_CLOSED";
 
+        public const string FINISH_CHECK_POINT_INFO = "FinishedCheckPointInfo";
+        public const string NEXT_CHECK_POINT_INFO = "NextCheckPointInfo";
 
 
         public const string CONNECT_TO_WS_SERVER = "ConnectToWsServer";

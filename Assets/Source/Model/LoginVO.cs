@@ -8,7 +8,7 @@ public class LoginVO
     public string password { get; set; }
     public string did { get; set; }
     public string mofiID { get; set; }
-
+    public string gameID { get; set; }
 
     public LoginVO()
     {
@@ -16,5 +16,17 @@ public class LoginVO
         password = "";
         did = "";
         mofiID = "";
+        gameID = "";
+;    }
+}
+
+public class ActorCheckpointRecord
+{
+    public string checkpoint_name { get; set; }
+    public float timeRemain { get; set; }
+    public ActorCheckpointRecord()
+    {
+        checkpoint_name = "";
+        timeRemain = 0.0f;
     }
 }

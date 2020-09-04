@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: UIForm
+  m_Name: Sprite
   m_EditorClassIdentifier: 
-  m_GroupName: UIForm
+  m_GroupName: Sprite
   m_Data:
     m_SerializedData: []
-  m_GUID: 204c5b0bd71f3498493966de786f2fec
+  m_GUID: 811df55ef0275e948a25780337b88ea5
   m_SerializeEntries:
-  - m_GUID: 0215676ce73ec054aa356feb2164c42f
-    m_Address: CheckPointForm_Normal
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 285766622fe8b436d809e758fb3405de
-    m_Address: WechatLoginForm_Normal
+  - m_GUID: a6332a57c3c63a94d9e6001c37b7a0a8
+    m_Address: actor_icon_01
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 024944a3c8a5c4c6db4bc2bc3e44ddbb, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 63972c076b3c8416daa30a4907bf1743, type: 2}
-    - {fileID: 11400000, guid: 02e47f6c0d32c4acd865c9a94a7a7d8e, type: 2}
+    - {fileID: 11400000, guid: d425aa5c04d41f549a70c24e77ee1351, type: 2}
+    - {fileID: 11400000, guid: f1240d815daea5347b032e7baaef8006, type: 2}

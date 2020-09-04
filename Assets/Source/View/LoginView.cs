@@ -27,6 +27,8 @@ public class LoginView : UIViewBase
     [SerializeField]
     private InputField m_mofiIdInputField;
     [SerializeField]
+    private InputField m_gameIdInputField;
+    [SerializeField]
     private Button m_mofiIdBackBtn;
     [SerializeField]
     private Button m_mofiIdEnterButton;
@@ -42,6 +44,7 @@ public class LoginView : UIViewBase
         m_mofiIdBackBtn.onClick.AddListener(() => ActivateLoginPanel());
         m_mofiIdEnterButton.onClick.AddListener(() => SaveMofiId());
         m_mofiIdInputField.onValueChanged.AddListener(SetMofiId);
+        m_gameIdInputField.onValueChanged.AddListener((string _gameID) => { loginVO.gameID = _gameID;Debug.Log("GameID==" + _gameID); });
         m_userNameField.onValueChanged.AddListener((string _userName) => { loginVO.userName = _userName; });
         m_passwordField.onValueChanged.AddListener((string _password) => { loginVO.password = _password; });
         loginVO = new LoginVO();
