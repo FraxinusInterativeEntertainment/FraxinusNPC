@@ -29,6 +29,7 @@ public static partial class Const
         #endregion
 
         #region Communication
+        
         public const string WS_SEND = "WsSend";
 
         public const string GET_ACTOR_INFO = "GetActorInfo";

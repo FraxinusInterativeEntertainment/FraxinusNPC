@@ -24,6 +24,7 @@ public class LoginProxy : Proxy, IProxy, IResponder
     public void OnResult(object _data)
     {
         SendNotification(Const.Notification.LOAD_UI_ROOT_FORM, Const.UIFormNames.CHECK_POINT_FORM_NORMAL);
+        AppFacade.instance.SendNotification(Const.Notification.SETUP_CONNECTION_WITH_SERVER);
         actorInfos = _data as ActorInfo;
     }
 

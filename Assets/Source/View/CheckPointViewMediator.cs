@@ -54,6 +54,7 @@ public class CheckPointViewMediator : Mediator, IMediator
         else
         {
             SendNotification(Const.Notification.SEND_ACTOR_CHECK_POINT_RECORD, m_checkPointView.actorcheckPointRecord);
+            m_checkPointView.CloseCoroutin();
             m_checkPointView.UpdateFinishedCheckPointInfo(checkPointInfos);
         }
    }
@@ -67,6 +68,7 @@ public class CheckPointViewMediator : Mediator, IMediator
         else
         {
             SendNotification(Const.Notification.SEND_ACTOR_CHECK_POINT_RECORD, m_checkPointView.actorcheckPointRecord);
+            m_checkPointView.CloseCoroutin();
             m_checkPointView.UpdateUnFinishedCheckPointInfo(checkPointInfos);
         }
     }
