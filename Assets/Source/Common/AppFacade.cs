@@ -32,6 +32,9 @@ public class AppFacade : Facade, IFacade
         RegisterCommand(Const.Notification.GO_TO_HOME_FORM, typeof(UICommand));
         RegisterCommand(Const.Notification.BACK_TO_LAST_FORM, typeof(UICommand));
         RegisterCommand(Const.Notification.SEND_ADMIN_LOGIN, typeof(LoginCommand));
+        RegisterCommand(Const.Notification.SEND_ACTOR_CHECK_POINT_RECORD, typeof(CheckPointCommand));
+        RegisterCommand(Const.Notification.SETUP_CONNECTION_WITH_SERVER, typeof(ServerCommunicationCommand));
+        RegisterCommand(Const.Notification.CONNECT_TO_WS_SERVER, typeof(ServerCommunicationCommand));
     }
 
     public void startup()

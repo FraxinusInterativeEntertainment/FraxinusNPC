@@ -8,5 +8,6 @@ public static partial class Const
     {
         //Form加载名称
         public const string WECHAT_LOGIN_FORM_NORMAL = "WechatLoginForm_Normal";
+        public const string CHECK_POINT_FORM_NORMAL = "CheckPointForm_Normal";
     }
 }
