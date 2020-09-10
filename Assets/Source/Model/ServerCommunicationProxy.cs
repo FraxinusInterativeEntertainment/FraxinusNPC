@@ -71,6 +71,7 @@ public class ServerCommunicationProxy : Proxy, IProxy
             CheckPointInfos msgContent = JsonConvert.DeserializeObject<CheckPointInfos>(_message);
             AppFacade.instance.SendNotification(Const.Notification.NEXT_CHECK_POINT_INFO, msgContent);
         }
+    }
     /*
     private string testWsSend()
     {
