@@ -13,7 +13,7 @@ public class LoginProxy : Proxy, IProxy, IResponder
     public void QrSendLogin(object _data)
     {
         //TODO:Add did,gameID
-        SendLogin(_data, "TestUWB456", "2020831_1");
+        SendLogin(_data, "TestUWB456", "2020921_1");
     }
 
     public void SendLogin(object _data,string _did,string _gameID)

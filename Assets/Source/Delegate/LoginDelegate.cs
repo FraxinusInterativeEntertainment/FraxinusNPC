@@ -14,7 +14,6 @@ public class LoginDelegate
         form.AddField("password", _loginVO.password);
         form.AddField("did", _did);
         form.AddField("game_id", _gameID);
-        Debug.Log("username:" + _loginVO.userName + "  password:" + _loginVO.password + "  did:" + _did + "  game_id:" + _gameID);
         m_responder = _responder;
         Debug.Log(Const.Url.CONTROL_CENTER_LOGIN);
         m_httpService = new HttpService(Const.Url.CONTROL_CENTER_LOGIN, HttpRequestType.Post, form);
@@ -31,7 +30,6 @@ public class LoginDelegate
         if (_httpResponse.err_code == 0)
         {
             m_responder.OnResult(_httpResponse.actor_info);
-            Debug.Log("登录返回的信息==" + _httpResponse.actor_info.character+ _httpResponse.actor_info.image+"EID:"+_httpResponse.actor_info.eid);
         }
         else
         {
