@@ -11,7 +11,7 @@ public static partial class Const
         public const string USER_SERVER_ADDRESS = "http://testuser.fraxinusmothership.cn";
 
         public const string WEB_SOCKET_HOST_URI = "http://testgame.fraxinusmothership.cn";
-        public const string WEB_SOCKET_SERVER_ADDRESS = "ws://testgame.fraxinusmothership.cn/ws/control_center/";
+        public const string WEB_SOCKET_SERVER_ADDRESS = "ws://testgame.fraxinusmothership.cn/ws/actor/";  //Actor
 
         public const string GET_WS_TOKEN = GAME_SERVER_ADDRESS + "/game_auth/get_ws_token/";
 

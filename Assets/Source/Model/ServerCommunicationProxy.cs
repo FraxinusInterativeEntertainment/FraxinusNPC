@@ -63,14 +63,18 @@ public class ServerCommunicationProxy : Proxy, IProxy
         ServerMsg obj = JsonConvert.DeserializeObject<ServerMsg>(_message);
         if (obj.MsgType == "checkpoint_finished")
         {
+            Debug.Log("剧情推进：已完成");
             CheckPointInfos msgContent = JsonConvert.DeserializeObject<CheckPointInfos>(_message);
             AppFacade.instance.SendNotification(Const.Notification.FINISH_CHECK_POINT_INFO, msgContent);
         }
         else if (obj.MsgType == "next_checkpoint")
         {
+            Debug.Log("剧情推进：");
             CheckPointInfos msgContent = JsonConvert.DeserializeObject<CheckPointInfos>(_message);
+           
             AppFacade.instance.SendNotification(Const.Notification.NEXT_CHECK_POINT_INFO, msgContent);
         }
+    }
     /*
     private string testWsSend()
     {
