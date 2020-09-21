@@ -127,4 +127,8 @@ public class CheckPointView : UIViewBase
         m_finishedImage.color = Color.green;
         m_timeText.gameObject.SetActive(false);
     }
+    public void CloseCoroutin()
+    {
+        StopCoroutine("CountDown");
+    }
 }

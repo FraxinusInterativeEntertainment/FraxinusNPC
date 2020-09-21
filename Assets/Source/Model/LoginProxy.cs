@@ -13,7 +13,7 @@ public class LoginProxy : Proxy, IProxy, IResponder
     public void QrSendLogin(object _data)
     {
         //TODO:Add did,gameID
-        SendLogin(_data, "TestUWB456", "2020831_1");
+        SendLogin(_data, "TestUWB456", "2020921_1");
     }
 
     public void SendLogin(object _data,string _did,string _gameID)
@@ -24,6 +24,7 @@ public class LoginProxy : Proxy, IProxy, IResponder
     public void OnResult(object _data)
     {
         SendNotification(Const.Notification.LOAD_UI_ROOT_FORM, Const.UIFormNames.CHECK_POINT_FORM_NORMAL);
+        AppFacade.instance.SendNotification(Const.Notification.SETUP_CONNECTION_WITH_SERVER);
         actorInfos = _data as ActorInfo;
     }
 

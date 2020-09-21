@@ -42,7 +42,6 @@ public class HttpService
         }
         else
         {
-            Debug.Log(www.downloadHandler.text);
             T serverResponse = JsonConvert.DeserializeObject<T>(www.downloadHandler.text);
             _callback(serverResponse);
         }
